@@ -1,0 +1,12 @@
+.breadcrumb{
+    background-color: #001871 !important;
+    color: #fff !important;
+    border-radius: 4px;
+}
+.breadcrumb-item a{
+    color:#fff !important;
+}
+.breadcrumb-item+.breadcrumb-item::before{
+    content: ">" !important;
+    color: #fa9917 !important;
+}

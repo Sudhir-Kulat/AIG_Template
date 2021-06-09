@@ -1,0 +1,9 @@
+.home{
+    margin: 1rem 4rem;
+}
+.home__greetings{
+    font-size: 14px;
+}
+.home__plan{
+   color: #001871;
+}
