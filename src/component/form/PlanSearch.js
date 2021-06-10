@@ -6,10 +6,11 @@ import {Row,Col} from 'react-bootstrap'
 import {useDispatch} from 'react-redux';
 import {dropDownData} from './dropdownData'
 import {getPlans} from '../../actions/PlanSearchAction'
-
-
+import PlanSearchResult from "./PlanSearchResult";
+import {useSelector} from 'react-redux';
 
 const PlanSearch = () => {
+  const users = useSelector(state=>state.plans);
   const dispatch = useDispatch();
   const[formData, setFormData] = React.useState({
     planCode:'', planName:'', clientName:'', programName:'',
@@ -30,6 +31,7 @@ const PlanSearch = () => {
         })
     }
     return (
+      <React.Fragment>
       <form className="planSearch">
         <DropDown
           optionList={dropDownData}
@@ -56,6 +58,8 @@ const PlanSearch = () => {
           </Col>
         </Row>
       </form>
+      {users.length>0&&<PlanSearchResult users={users}/>}
+      </React.Fragment>
     );
 }
 
