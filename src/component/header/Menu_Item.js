@@ -1,7 +1,7 @@
 export const NavData = [
     {
         id:1,
-       name:"Home" , 
+       name:"Home" ,
     },
     {
         id:2,

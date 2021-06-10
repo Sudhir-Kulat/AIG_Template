@@ -1,8 +1,7 @@
 // const initialState={
 //     plans: ""
 // }
-const PlanReducer=(plans="", action)=>{
-    console.log("in reducer"+ action.payload)
+const PlanReducer=(plans=[], action)=>{
     switch (action.type){
         case 'SEARCH_PLAN':
             return action.payload
