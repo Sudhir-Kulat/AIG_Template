@@ -2307,18 +2307,6 @@
     "loader-utils" "^2.0.0"
     "regex-parser" "^2.2.11"
 
-"ag-grid-community@^25.3.0", "ag-grid-community@~25.3.0":
-  "integrity" "sha512-Xe4NZG0PP9kvhila1uHU4BeVfLDCWBmcuBYLBZ+49jvK+jYpuwdAjV3AwIlxpZGRR3WTdBUvUkSz9rmi2DRE3Q=="
-  "resolved" "https://registry.npmjs.org/ag-grid-community/-/ag-grid-community-25.3.0.tgz"
-  "version" "25.3.0"
-
-"ag-grid-react@^25.3.0":
-  "integrity" "sha512-sRu4Mgxe26GkCKZL9XNMf/jbxLrYOuJo0pumD+LgA3e1x0mKeG8fqMbDLBKfKthIZbTaopIiwn4basThPnVdTg=="
-  "resolved" "https://registry.npmjs.org/ag-grid-react/-/ag-grid-react-25.3.0.tgz"
-  "version" "25.3.0"
-  dependencies:
-    "prop-types" "^15.6.2"
-
 "agent-base@6":
   "integrity" "sha512-RZNwNclF7+MS/8bDg70amg32dyeZGZxiDuQmZxKLAlQjr3jGyLx+4Kkk58UO7D2QdgFIQCovuSuZESne6RG6XQ=="
   "resolved" "https://registry.npmjs.org/agent-base/-/agent-base-6.0.2.tgz"
@@ -9336,7 +9324,7 @@
     "strip-ansi" "6.0.0"
     "text-table" "0.2.0"
 
-"react-dom@*", "react-dom@^16.14 || ^17.0", "react-dom@^16.3.0 || ^17.0.0", "react-dom@^17.0.2", "react-dom@>=16.3.0", "react-dom@>=16.6.0", "react-dom@>=16.8.0":
+"react-dom@*", "react-dom@^16.14 || ^17.0", "react-dom@^17.0.2", "react-dom@>=16.3.0", "react-dom@>=16.6.0", "react-dom@>=16.8.0":
   "integrity" "sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA=="
   "resolved" "https://registry.yarnpkg.com/react-dom/-/react-dom-17.0.2.tgz"
   "version" "17.0.2"
@@ -9472,7 +9460,7 @@
     "loose-envify" "^1.4.0"
     "prop-types" "^15.6.2"
 
-"react@*", "react@^16.14 || ^17.0", "react@^16.3.0 || ^17.0.0", "react@^16.8.3 || ^17", "react@^17.0.2", "react@>= 16", "react@>=0.14.0", "react@>=15.0.0", "react@>=16.3.0", "react@>=16.3.2", "react@>=16.6.0", "react@>=16.8.0", "react@17.0.2":
+"react@*", "react@^16.14 || ^17.0", "react@^16.8.3 || ^17", "react@^17.0.2", "react@>= 16", "react@>=0.14.0", "react@>=15.0.0", "react@>=16.3.0", "react@>=16.3.2", "react@>=16.6.0", "react@>=16.8.0", "react@17.0.2":
   "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="
   "resolved" "https://registry.yarnpkg.com/react/-/react-17.0.2.tgz"
   "version" "17.0.2"

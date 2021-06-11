@@ -14,7 +14,9 @@ class PlanSearchResult extends Component {
       };
     }
 
-    render() {   
+    render() { 
+      console.log("in result")
+      console.log(this.props)  
         return (
           <div className="mt-3 mx-auto" style={{ width: "100%", height: 350 }}>
             <ReactDataGrid

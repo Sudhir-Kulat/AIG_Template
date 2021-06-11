@@ -3,15 +3,10 @@ import Button from './Button';
 import DropDown from "../dropDown/DropDown";
 import './form.css'
 import {Row,Col} from 'react-bootstrap'
-import {useDispatch} from 'react-redux';
 import {dropDownData} from './dropdownData'
-import {getPlans} from '../../actions/PlanSearchAction'
-import PlanSearchResult from "./PlanSearchResult";
-import {useSelector} from 'react-redux';
+
 
 const PlanSearch = () => {
-  const users = useSelector(state=>state.plans);
-  const dispatch = useDispatch();
   const[formData, setFormData] = React.useState({
     planCode:'', planName:'', clientName:'', programName:'',
      record:'', status:''
@@ -22,7 +17,6 @@ const PlanSearch = () => {
       e.preventDefault();
       console.log("submitting")
       console.log(formData)
-      dispatch(getPlans(formData))
     }
     const clearForm=(e)=>{
         setFormData({
@@ -32,33 +26,38 @@ const PlanSearch = () => {
     }
     return (
       <React.Fragment>
-      <form className="planSearch">
-        <DropDown
-          optionList={dropDownData}
-          name="planCode"
-          formData={formData}
-          setFormData={setFormData}
-        />
+        <form className="planSearch">
+          <Row className="m-0">
+            {dropDownData.map((dropDown) => (
+              <Col md={3} className="mb-4">
+                <label htmlFor={dropDown.name}>{dropDown.label}</label>
+                <DropDown
+                  optionList={dropDown.option}
+                  name={dropDown.name}
+                  formData={formData}
+                  setFormData={setFormData}
+                />
+              </Col>
+            ))}
+            <Col md={3} className="p-0 mt-2">
+              <label htmlFor="clientName">Client Name</label>
+              <input
+                type="text"
+                name="clientName"
+                onChange={(e) =>
+                  setFormData({ ...formData, clientName: e.target.value })
+                }
+              />
+            </Col>
+          </Row>
 
-        <Col md={3} className="p-0 mt-2">
-          <label htmlFor="clientName">Client Name</label>
-          <input
-            type="text"
-            name="clientName"
-            onChange={(e) =>
-              setFormData({ ...formData, clientName: e.target.value })
-            }
-          />
-        </Col>
-
-        <Row className="form__btn">
-          <Col xs={12}>
-            <Button name="Submit" type="submit" method={handleSubmit} />
-            <Button name="Clear" type="reset" method={clearForm} />
-          </Col>
-        </Row>
-      </form>
-      {users.length>0&&<PlanSearchResult users={users}/>}
+          <Row className="form__btn">
+            <Col xs={12}>
+              <Button name="Submit" type="submit" method={handleSubmit} />
+              <Button name="Clear" type="reset" method={clearForm} />
+            </Col>
+          </Row>
+        </form>
       </React.Fragment>
     );
 }
