@@ -11,6 +11,7 @@ const dispatch = useDispatch();
 useEffect(() => {
   dispatch(getPlans())
 },[dispatch])
+
     return (
       <div className="home">
         <span className="home__greetings">Welcome Guest</span>

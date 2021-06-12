@@ -20,6 +20,13 @@ const UserReducer=(state=initialState, {type,payload})=>{
                   isLoading: true,
             };
 
+            case actionTypes.CREATE_USER:
+                return {
+                    plans:[...state.plans, payload],
+                    isLoading: false,
+                    error: null
+                }
+
             case actionTypes.FETCH_USERS_FAILED:
                 return {
                   ...state,

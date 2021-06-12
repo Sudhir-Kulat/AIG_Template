@@ -2,7 +2,6 @@ import * as api from '../api/RestAPI'
 import { actionTypes } from "./ActionTypes";
 
 export const getPlans=()=>{
-    console.log("action is " + actionTypes.FETCH_USERS_SUCCESS )
     return async(dispatch)=>{
         dispatch(fetchUsersStarted())
         try {
@@ -28,6 +27,18 @@ const fetchUsersFailed=(error)=>{
         type: actionTypes.FETCH_USERS_FAILED,
         payload:{
             error:error
+        }
+    }
+}
+
+
+export const createUser=(user)=>{
+    return async(dispatch)=>{
+        try {
+            const {data} = await api.create_user(user)
+            dispatch({type:actionTypes.CREATE_USER,payload:data.data})
+        } catch (error) {
+            console.log(error.message)
         }
     }
 }

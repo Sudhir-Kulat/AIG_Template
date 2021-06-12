@@ -4,30 +4,49 @@ import DropDown from "../dropDown/DropDown";
 import './form.css'
 import {Row,Col} from 'react-bootstrap'
 import {dropDownData} from './dropdownData'
+import {useDispatch} from 'react-redux';
+import {createUser} from '../../actions/PlanSearchAction'
 
 
 const PlanSearch = () => {
   const[formData, setFormData] = React.useState({
-    planCode:'', planName:'', clientName:'', programName:'',
-     record:'', status:''
+    name:'', email:'', gender:'', status:''
   })
-
-
+  const dispatch = useDispatch();
     const handleSubmit=(e)=>{
       e.preventDefault();
-      console.log("submitting")
-      console.log(formData)
+      console.log("submitting", formData)
+      dispatch(createUser(formData))
     }
     const clearForm=(e)=>{
         setFormData({
-          planCode:'', planName:'', clientName:'', programName:'',
-           record:'', status:''
+          name:'', email:'', gender:'', status:''
         })
     }
     return (
       <React.Fragment>
         <form className="planSearch">
           <Row className="m-0">
+          <Col md={3} className="p-0 mt-2">
+              <label htmlFor="name">Name</label>
+              <input
+                type="text"
+                name="name"
+                onChange={(e) =>
+                  setFormData({ ...formData, name: e.target.value })
+                }
+              />
+            </Col>
+            <Col md={3} className="p-0 mt-2">
+              <label htmlFor="email">Email </label>
+              <input
+                type="email"
+                name="email"
+                onChange={(e) =>
+                  setFormData({ ...formData, email: e.target.value })
+                }
+              />
+            </Col>
             {dropDownData.map((dropDown) => (
               <Col md={3} className="mb-4">
                 <label htmlFor={dropDown.name}>{dropDown.label}</label>
@@ -39,16 +58,6 @@ const PlanSearch = () => {
                 />
               </Col>
             ))}
-            <Col md={3} className="p-0 mt-2">
-              <label htmlFor="clientName">Client Name</label>
-              <input
-                type="text"
-                name="clientName"
-                onChange={(e) =>
-                  setFormData({ ...formData, clientName: e.target.value })
-                }
-              />
-            </Col>
           </Row>
 
           <Row className="form__btn">
