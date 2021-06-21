@@ -8,7 +8,7 @@ const App=()=> {
   return (
     <React.Fragment>
       <Header />
-      <BreadCrumb />
+      <BreadCrumb heading="Warranty Component Administration" label="Plan" />
       <Home />
       <Footer />
     </React.Fragment>
