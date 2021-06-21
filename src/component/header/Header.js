@@ -5,9 +5,9 @@ import Logo from '../../assets/logo.png'
 import './header.css'
 const Header = () => {
     return (
-      <div>
+      <div data-test="header">
         <Navbar bg="light" expand="lg" className="pb-0">
-          <Navbar.Brand href="#"><img src={Logo} alt="logo" /></Navbar.Brand>
+          <Navbar.Brand href="#"><img  data-test="logo" src={Logo} alt="logo" /></Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll" className="mt-3">
             <Nav
@@ -17,7 +17,7 @@ const Header = () => {
             >
             {NavData.map(data =>(
               !data.hasOwnProperty('list') ? (<Nav.Link href="#" key={data.id} className="active">{data.name}</Nav.Link>): 
-              (<NavDropdown title={data.name} id="navbarScrollingDropdown" key={data.id}>
+              (<NavDropdown data-test="header__dropDown" title={data.name} id="navbarScrollingDropdown" key={data.id}>
                 {data.list.map( (item,index)=>(
                   <NavDropdown.Item href="#" key={index}>{item}</NavDropdown.Item>    
                 ))}
