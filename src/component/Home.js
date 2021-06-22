@@ -2,14 +2,14 @@ import React,{useEffect} from 'react'
 import PlanSearch from "./form/PlanSearch";
 import PlanSearchResult from "./form/PlanSearchResult";
 import {useSelector,useDispatch} from 'react-redux';
-import {getPlans} from '../actions/PlanSearchAction'
+import {getUsers} from '../actions/PlanSearchAction'
 import './home.css'
 
 const Home = () => {
 const users = useSelector(state=>state.users);
 const dispatch = useDispatch();
 useEffect(() => {
-  dispatch(getPlans())
+  dispatch(getUsers())
 },[dispatch])
 
     return (

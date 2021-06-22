@@ -1,7 +1,7 @@
 import * as api from '../api/RestAPI'
 import { actionTypes } from "./ActionTypes";
 
-export const getPlans=()=>{
+export const getUsers=()=>{
     return async(dispatch)=>{
         dispatch(fetchUsersStarted())
         try {

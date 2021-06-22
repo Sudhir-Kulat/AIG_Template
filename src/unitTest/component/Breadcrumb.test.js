@@ -1,13 +1,20 @@
 import React from 'react'
 import {shallow} from 'enzyme'
 import Breadcrumb from '../../component/breadcrumb/BreadCrumb'
-import {findByTestAttr} from '../../Utility/index'
+import {findByTestAttr, checkProps} from '../../Utility/index'
+
 const setUp=(props={})=>{
     const component = shallow(<Breadcrumb {...props} />)
     return component; 
 }
 
 describe('BreadCrumb component',()=>{
+
+    describe('should not throw warning',()=>{
+        const expectedProps = { heading: "some heading", label: "test lable" };
+        const propsErr = checkProps(Breadcrumb,expectedProps)
+        expect(propsErr).toBeUndefined();
+    })
 
     describe('When having props',()=>{
         let wrapper;
