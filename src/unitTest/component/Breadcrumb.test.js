@@ -2,8 +2,6 @@ import React from 'react'
 import {shallow} from 'enzyme'
 import Breadcrumb from '../../component/breadcrumb/BreadCrumb'
 import {findByTestAttr} from '../../Utility/index'
-import PropTypes from 'prop-types'
-
 const setUp=(props={})=>{
     const component = shallow(<Breadcrumb {...props} />)
     return component; 
